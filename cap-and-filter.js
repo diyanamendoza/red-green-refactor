@@ -1,9 +1,6 @@
 const capAndFilter = (array) => {
-  const newArray = [];
-  for(let i = 0; i < array.length; i++) {
-    !array[i].startsWith('f') && !array[i].startsWith('F') && newArray.push(array[i].toUpperCase());
-  }
-  return newArray;
+  const newArray = array.map(entry => entry.toUpperCase());
+  return newArray.filter(entry => !entry.startsWith('F'));
 };
   
 module.exports = capAndFilter;
